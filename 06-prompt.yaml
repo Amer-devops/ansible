@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars_prompt: 
-  - name: usernsme
+  - name: username
     prompt: what is user name
-    private: true
+    private: false
   - name: password
     prompt: Enter password
     private: true 
