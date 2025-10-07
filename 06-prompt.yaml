@@ -1,14 +1,14 @@
-- name: play level prompt
+- name: variables from prompt
   hosts: local
   connection: local
-  vars_prompt: 
-  - name: usernsme
-      prompt: what is user name
-      private: true
+  vars_prompt:
+  - name: username
+    prompt: What is your username?
+    private: false
   - name: password
-      prompt: Enter password
-      private: true 
+    prompt: What is your password?
+    private: true
   tasks:
-    - name: print out the credentials
-        ansible.builtin.debug:
-          msg: "Hello, Username is: {{ username }}, Password is: {{ password }}"
+  - name: print credentials
+    ansible.builtin.debug:
+      msg: "Hello, Username is: {{ username }}, Password is: {{ password }}"
